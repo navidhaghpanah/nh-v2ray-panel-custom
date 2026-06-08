@@ -1,6 +1,14 @@
 node_modules/
+<<<<<<< HEAD
 dist/
 bin/
 nh-v2ray-panel
 .env
 .DS_Store
+=======
+bin/
+web/dist/
+database/
+config/
+.env
+>>>>>>> dbc70a4cdf5cf1eb9ad6c08c9ea5dfbb477fb034
