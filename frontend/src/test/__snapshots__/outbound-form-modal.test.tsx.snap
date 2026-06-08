@@ -2,140 +2,140 @@
 
 exports[`OutboundFormModal > field structure is stable for every protocol > blackhole 1`] = `
 [
-  "Protocol",
-  "Tag",
-  "Send Through",
-  "Address",
-  "Port",
+  "protocol",
+  "pages.xray.outbound.tag",
+  "pages.xray.outbound.sendThrough",
+  "pages.inbounds.address",
+  "pages.inbounds.port",
   "ID",
-  "Encryption",
-  "Reverse tag",
-  "Mux",
+  "encryption",
+  "pages.clients.reverseTag",
+  "pages.settings.mux",
 ]
 `;
 
 exports[`OutboundFormModal > field structure is stable for every protocol > dns 1`] = `
 [
-  "Protocol",
-  "Tag",
-  "Send Through",
-  "Address",
-  "Port",
+  "protocol",
+  "pages.xray.outbound.tag",
+  "pages.xray.outbound.sendThrough",
+  "pages.inbounds.address",
+  "pages.inbounds.port",
   "ID",
-  "Encryption",
-  "Reverse tag",
-  "Mux",
+  "encryption",
+  "pages.clients.reverseTag",
+  "pages.settings.mux",
 ]
 `;
 
 exports[`OutboundFormModal > field structure is stable for every protocol > freedom 1`] = `
 [
-  "Protocol",
-  "Tag",
-  "Send Through",
-  "Address",
-  "Port",
+  "protocol",
+  "pages.xray.outbound.tag",
+  "pages.xray.outbound.sendThrough",
+  "pages.inbounds.address",
+  "pages.inbounds.port",
   "ID",
-  "Encryption",
-  "Reverse tag",
-  "Mux",
+  "encryption",
+  "pages.clients.reverseTag",
+  "pages.settings.mux",
 ]
 `;
 
 exports[`OutboundFormModal > field structure is stable for every protocol > hysteria 1`] = `
 [
-  "Protocol",
-  "Tag",
-  "Send Through",
-  "Address",
-  "Port",
+  "protocol",
+  "pages.xray.outbound.tag",
+  "pages.xray.outbound.sendThrough",
+  "pages.inbounds.address",
+  "pages.inbounds.port",
   "ID",
-  "Encryption",
-  "Reverse tag",
-  "Mux",
+  "encryption",
+  "pages.clients.reverseTag",
+  "pages.settings.mux",
 ]
 `;
 
 exports[`OutboundFormModal > field structure is stable for every protocol > shadowsocks 1`] = `
 [
-  "Protocol",
-  "Tag",
-  "Send Through",
-  "Address",
-  "Port",
+  "protocol",
+  "pages.xray.outbound.tag",
+  "pages.xray.outbound.sendThrough",
+  "pages.inbounds.address",
+  "pages.inbounds.port",
   "ID",
-  "Encryption",
-  "Reverse tag",
-  "Mux",
+  "encryption",
+  "pages.clients.reverseTag",
+  "pages.settings.mux",
 ]
 `;
 
 exports[`OutboundFormModal > field structure is stable for every protocol > socks 1`] = `
 [
-  "Protocol",
-  "Tag",
-  "Send Through",
-  "Address",
-  "Port",
+  "protocol",
+  "pages.xray.outbound.tag",
+  "pages.xray.outbound.sendThrough",
+  "pages.inbounds.address",
+  "pages.inbounds.port",
   "ID",
-  "Encryption",
-  "Reverse tag",
-  "Mux",
+  "encryption",
+  "pages.clients.reverseTag",
+  "pages.settings.mux",
 ]
 `;
 
 exports[`OutboundFormModal > field structure is stable for every protocol > trojan 1`] = `
 [
-  "Protocol",
-  "Tag",
-  "Send Through",
-  "Address",
-  "Port",
+  "protocol",
+  "pages.xray.outbound.tag",
+  "pages.xray.outbound.sendThrough",
+  "pages.inbounds.address",
+  "pages.inbounds.port",
   "ID",
-  "Encryption",
-  "Reverse tag",
-  "Mux",
+  "encryption",
+  "pages.clients.reverseTag",
+  "pages.settings.mux",
 ]
 `;
 
 exports[`OutboundFormModal > field structure is stable for every protocol > vless 1`] = `
 [
-  "Protocol",
-  "Tag",
-  "Send Through",
-  "Address",
-  "Port",
+  "protocol",
+  "pages.xray.outbound.tag",
+  "pages.xray.outbound.sendThrough",
+  "pages.inbounds.address",
+  "pages.inbounds.port",
   "ID",
-  "Encryption",
-  "Reverse tag",
-  "Mux",
+  "encryption",
+  "pages.clients.reverseTag",
+  "pages.settings.mux",
 ]
 `;
 
 exports[`OutboundFormModal > field structure is stable for every protocol > vmess 1`] = `
 [
-  "Protocol",
-  "Tag",
-  "Send Through",
-  "Address",
-  "Port",
+  "protocol",
+  "pages.xray.outbound.tag",
+  "pages.xray.outbound.sendThrough",
+  "pages.inbounds.address",
+  "pages.inbounds.port",
   "ID",
-  "Encryption",
-  "Reverse tag",
-  "Mux",
+  "encryption",
+  "pages.clients.reverseTag",
+  "pages.settings.mux",
 ]
 `;
 
 exports[`OutboundFormModal > field structure is stable for every protocol > wireguard 1`] = `
 [
-  "Protocol",
-  "Tag",
-  "Send Through",
-  "Address",
-  "Port",
+  "protocol",
+  "pages.xray.outbound.tag",
+  "pages.xray.outbound.sendThrough",
+  "pages.inbounds.address",
+  "pages.inbounds.port",
   "ID",
-  "Encryption",
-  "Reverse tag",
-  "Mux",
+  "encryption",
+  "pages.clients.reverseTag",
+  "pages.settings.mux",
 ]
 `;

@@ -2,133 +2,133 @@
 
 exports[`inbound security forms > RealityForm field structure is stable 1`] = `
 [
-  "Show",
-  "Xver",
+  "pages.inbounds.form.show",
+  "pages.inbounds.form.xver",
   "uTLS",
-  "Target",
+  "pages.inbounds.form.target",
   "SNI",
-  "Max Time Diff (ms)",
-  "Min Client Ver",
-  "Max Client Ver",
-  "Short IDs",
-  "SpiderX",
-  "Public Key",
-  "Private Key",
-  "mldsa65 Seed",
-  "mldsa65 Verify",
+  "pages.inbounds.form.maxTimeDiff",
+  "pages.inbounds.form.minClientVer",
+  "pages.inbounds.form.maxClientVer",
+  "pages.inbounds.form.shortIds",
+  "pages.inbounds.form.spiderX",
+  "pages.inbounds.publicKey",
+  "pages.inbounds.privatekey",
+  "pages.inbounds.form.mldsa65Seed",
+  "pages.inbounds.form.mldsa65Verify",
 ]
 `;
 
 exports[`inbound security forms > TlsForm field structure is stable 1`] = `
 [
   "SNI",
-  "Cipher Suites",
-  "Min/Max Version",
+  "pages.inbounds.form.cipherSuites",
+  "pages.inbounds.form.minMaxVersion",
   "uTLS",
   "ALPN",
-  "Reject Unknown SNI",
-  "Disable System Root",
-  "Session Resumption",
-  "Digital Certificate",
-  "ECH key",
-  "ECH config",
-  "Pinned Peer Cert SHA-256",
+  "pages.inbounds.form.rejectUnknownSni",
+  "pages.inbounds.form.disableSystemRoot",
+  "pages.inbounds.form.sessionResumption",
+  "certificate",
+  "pages.inbounds.form.echKey",
+  "pages.inbounds.form.echConfig",
+  "pages.inbounds.form.pinnedPeerCertSha256",
 ]
 `;
 
 exports[`inbound transport forms > ExternalProxyForm field structure is stable (one TLS entry) 1`] = `
 [
-  "External Proxy",
+  "pages.inbounds.form.externalProxy",
 ]
 `;
 
 exports[`inbound transport forms > GrpcForm field structure is stable 1`] = `
 [
-  "Service Name",
-  "Authority",
-  "Multi Mode",
+  "pages.inbounds.form.serviceName",
+  "pages.inbounds.form.authority",
+  "pages.inbounds.form.multiMode",
 ]
 `;
 
 exports[`inbound transport forms > HttpUpgradeForm field structure is stable 1`] = `
 [
-  "Proxy Protocol",
-  "Host",
-  "Path",
-  "Headers",
+  "pages.inbounds.form.proxyProtocol",
+  "host",
+  "path",
+  "pages.inbounds.form.headers",
 ]
 `;
 
 exports[`inbound transport forms > KcpForm field structure is stable 1`] = `
 [
   "MTU",
-  "TTI (ms)",
-  "Uplink (MB/s)",
-  "Downlink (MB/s)",
-  "CWND Multiplier",
-  "Max Sending Window",
+  "pages.inbounds.form.ttiMs",
+  "pages.inbounds.form.uplinkMbps",
+  "pages.inbounds.form.downlinkMbps",
+  "pages.inbounds.form.cwndMultiplier",
+  "pages.inbounds.form.maxSendingWindow",
 ]
 `;
 
 exports[`inbound transport forms > RawForm field structure is stable 1`] = `
 [
-  "Proxy Protocol",
-  "HTTP Obfuscation",
+  "pages.inbounds.form.proxyProtocol",
+  "HTTP camouflage",
 ]
 `;
 
 exports[`inbound transport forms > SockoptForm field structure is stable (enabled + happy eyeballs) 1`] = `
 [
   "Sockopt",
-  "Route Mark",
-  "TCP Keep Alive Interval",
-  "TCP Keep Alive Idle",
-  "TCP Max Seg",
-  "TCP User Timeout",
-  "TCP Window Clamp",
-  "Proxy Protocol",
-  "TCP Fast Open",
-  "Multipath TCP",
-  "Penetrate",
-  "V6 Only",
-  "Domain Strategy",
-  "TCP Congestion",
+  "pages.inbounds.form.routeMark",
+  "pages.inbounds.form.tcpKeepAliveInterval",
+  "pages.inbounds.form.tcpKeepAliveIdle",
+  "pages.inbounds.form.tcpMaxSeg",
+  "pages.inbounds.form.tcpUserTimeout",
+  "pages.inbounds.form.tcpWindowClamp",
+  "pages.inbounds.form.proxyProtocol",
+  "pages.inbounds.form.tcpFastOpen",
+  "pages.inbounds.form.multipathTcp",
+  "pages.inbounds.form.penetrate",
+  "pages.inbounds.form.v6Only",
+  "pages.xray.wireguard.domainStrategy",
+  "pages.inbounds.form.tcpCongestion",
   "TProxy",
-  "Dialer Proxy",
-  "Interface name",
-  "Trusted X-Forwarded-For",
-  "Address+port strategy",
+  "pages.inbounds.form.dialerProxy",
+  "pages.inbounds.info.interfaceName",
+  "pages.inbounds.form.trustedXForwardedFor",
+  "pages.inbounds.form.addressPortStrategy",
   "Happy Eyeballs",
-  "Try delay (ms)",
-  "Prioritize IPv6",
-  "Interleave",
-  "Max concurrent try",
-  "Custom sockopt",
+  "pages.inbounds.form.tryDelayMs",
+  "pages.inbounds.form.prioritizeIPv6",
+  "pages.inbounds.form.interleave",
+  "pages.inbounds.form.maxConcurrentTry",
+  "pages.inbounds.form.customSockopt",
 ]
 `;
 
 exports[`inbound transport forms > WsForm field structure is stable 1`] = `
 [
-  "Proxy Protocol",
-  "Host",
-  "Path",
-  "Heartbeat Period",
-  "Headers",
+  "pages.inbounds.form.proxyProtocol",
+  "host",
+  "path",
+  "pages.inbounds.form.heartbeatPeriod",
+  "pages.inbounds.form.headers",
 ]
 `;
 
 exports[`inbound transport forms > XhttpForm field structure is stable 1`] = `
 [
-  "Host",
-  "Path",
-  "Mode",
-  "Server Max Header Bytes",
-  "Padding Bytes",
-  "Headers",
-  "Uplink HTTP Method",
-  "Padding Obfs Mode",
-  "Session Placement",
-  "Sequence Placement",
-  "No SSE Header",
+  "host",
+  "path",
+  "pages.inbounds.info.mode",
+  "pages.inbounds.form.serverMaxHeaderBytes",
+  "pages.inbounds.form.paddingBytes",
+  "pages.inbounds.form.headers",
+  "pages.inbounds.form.uplinkHttpMethod",
+  "pages.inbounds.form.paddingObfsMode",
+  "pages.inbounds.form.sessionPlacement",
+  "pages.inbounds.form.sequencePlacement",
+  "pages.inbounds.form.noSseHeader",
 ]
 `;
