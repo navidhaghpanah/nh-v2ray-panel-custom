@@ -55,7 +55,7 @@ cd nh-v2ray-panel
 
 cp .env.example .env
 
-mkdir x-ui
+mkdir nh-v2ray-panel
 
 go mod download
 
@@ -65,16 +65,16 @@ npm run build
 cd ..
 ```
 
-`.env.example` ships with defaults that keep the database, logs, and xray binary inside the local `x-ui/` folder so nothing escapes the project directory:
+`.env.example` ships with defaults that keep the database, logs, and xray binary inside the local `nh-v2ray-panel/` folder so nothing escapes the project directory:
 
 ```
 XUI_DEBUG=true
-XUI_DB_FOLDER=x-ui
-XUI_LOG_FOLDER=x-ui
-XUI_BIN_FOLDER=x-ui
+XUI_DB_FOLDER=nh-v2ray-panel
+XUI_LOG_FOLDER=nh-v2ray-panel
+XUI_BIN_FOLDER=nh-v2ray-panel
 ```
 
-Drop the xray binary (`xray-windows-amd64.exe` on Windows, `xray-linux-amd64` on Linux, etc.) plus the matching `geoip.dat` and `geosite.dat` files into `x-ui/`. The easiest source is a [released Xray-core build](https://github.com/XTLS/Xray-core/releases). On Windows, `wintun.dll` is also required for testing TUN inbounds.
+Drop the xray binary (`xray-windows-amd64.exe` on Windows, `xray-linux-amd64` on Linux, etc.) plus the matching `geoip.dat` and `geosite.dat` files into `nh-v2ray-panel/`. The easiest source is a [released Xray-core build](https://github.com/XTLS/Xray-core/releases). On Windows, `wintun.dll` is also required for testing TUN inbounds.
 
 ## Running
 
@@ -102,9 +102,9 @@ The repo checks in two VS Code launch profiles in `.vscode/launch.json`: **Run n
       "cwd": "${workspaceFolder}",
       "env": {
         "XUI_DEBUG": "true",
-        "XUI_DB_FOLDER": "x-ui",
-        "XUI_LOG_FOLDER": "x-ui",
-        "XUI_BIN_FOLDER": "x-ui"
+        "XUI_DB_FOLDER": "nh-v2ray-panel",
+        "XUI_LOG_FOLDER": "nh-v2ray-panel",
+        "XUI_BIN_FOLDER": "nh-v2ray-panel"
       },
       "console": "integratedTerminal"
     },
@@ -117,8 +117,8 @@ The repo checks in two VS Code launch profiles in `.vscode/launch.json`: **Run n
       "cwd": "${workspaceFolder}",
       "env": {
         "XUI_DEBUG": "true",
-        "XUI_LOG_FOLDER": "x-ui",
-        "XUI_BIN_FOLDER": "x-ui",
+        "XUI_LOG_FOLDER": "nh-v2ray-panel",
+        "XUI_BIN_FOLDER": "nh-v2ray-panel",
         "XUI_DB_TYPE": "postgres",
         "XUI_DB_DSN": "postgres://xui:xuipass@127.0.0.1:5432/xui?sslmode=disable",
         "PATH": "C:\\Program Files\\PostgreSQL\\18\\bin;${env:PATH}"
@@ -232,7 +232,7 @@ For deeper notes on the frontend toolchain see [`frontend/README.md`](frontend/R
 | `xray/` | Xray-core process lifecycle and gRPC API client |
 | `sub/` | Subscription endpoints (raw, JSON, Clash) |
 | `config/` | Environment-variable helpers, paths, defaults |
-| `x-ui/` | **Runtime data** — db, logs, xray binary, geo files (gitignored) |
+| `nh-v2ray-panel/` | **Runtime data** — db, logs, xray binary, geo files (gitignored) |
 
 ## Sending a pull request
 
@@ -251,7 +251,7 @@ For deeper notes on the frontend toolchain see [`frontend/README.md`](frontend/R
 |----------|---------|---------|
 | `XUI_DEBUG` | `false` | Verbose logs + Gin debug mode + serve `/assets` from disk |
 | `XUI_LOG_LEVEL` | `info` | `debug` / `info` / `notice` / `warning` / `error` |
-| `XUI_DB_FOLDER` | platform default | Where `x-ui.db` lives |
+| `XUI_DB_FOLDER` | platform default | Where `nh-v2ray-panel.db` lives |
 | `XUI_LOG_FOLDER` | platform default | Where `3xui.log` lives |
 | `XUI_BIN_FOLDER` | `bin` | Where the xray binary, geo files, and xray `config.json` live |
 | `XUI_DB_TYPE` | `sqlite` | Set to `postgres` to use PostgreSQL via `XUI_DB_DSN` |
@@ -261,4 +261,4 @@ For deeper notes on the frontend toolchain see [`frontend/README.md`](frontend/R
 
 - Bug reports and feature requests: [GitHub Issues](https://github.com/navidhaghpanah/nh-v2ray-panel/issues)
 
-Before filing a bug, include the OS, Go version, panel version (`/panel/api/server/status` or the dashboard footer), and the relevant excerpt from `x-ui/3xui.log`.
+Before filing a bug, include the OS, Go version, panel version (`/panel/api/server/status` or the dashboard footer), and the relevant excerpt from `nh-v2ray-panel/3xui.log`.

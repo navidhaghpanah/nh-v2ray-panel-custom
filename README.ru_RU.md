@@ -73,7 +73,7 @@
 bash <(curl -Ls https://raw.githubusercontent.com/navidhaghpanah/nh-v2ray-panel/master/install.sh)
 ```
 
-Во время установки генерируются случайные имя пользователя, пароль и путь доступа. После установки выполните `x-ui`, чтобы открыть меню управления, где можно запускать/останавливать сервис, просматривать или сбрасывать учётные данные для входа, управлять SSL-сертификатами и многое другое.
+Во время установки генерируются случайные имя пользователя, пароль и путь доступа. После установки выполните `nh-v2ray-panel`, чтобы открыть меню управления, где можно запускать/останавливать сервис, просматривать или сбрасывать учётные данные для входа, управлять SSL-сертификатами и многое другое.
 
 Полную документацию смотрите в [вики проекта](https://github.com/navidhaghpanah/nh-v2ray-panel/wiki).
 
@@ -87,10 +87,10 @@ bash <(curl -Ls https://raw.githubusercontent.com/navidhaghpanah/nh-v2ray-panel/
 
 3X-UI поддерживает два бэкенда, выбираемых при установке:
 
-- **SQLite** (по умолчанию) — единый файл по пути `/etc/x-ui/x-ui.db`. Без настройки, идеально для небольших и средних развёртываний.
+- **SQLite** (по умолчанию) — единый файл по пути `/etc/nh-v2ray-panel/nh-v2ray-panel.db`. Без настройки, идеально для небольших и средних развёртываний.
 - **PostgreSQL** — рекомендуется при большом числе клиентов или конфигурациях с несколькими узлами. Установщик может установить PostgreSQL локально за вас или принять DSN к существующему серверу.
 
-Во время выполнения бэкенд выбирается через переменные окружения (установщик записывает их за вас в `/etc/default/x-ui`):
+Во время выполнения бэкенд выбирается через переменные окружения (установщик записывает их за вас в `/etc/default/nh-v2ray-panel`):
 
 ```
 XUI_DB_TYPE=postgres
@@ -100,9 +100,9 @@ XUI_DB_DSN=postgres://xui:password@127.0.0.1:5432/xui?sslmode=disable
 ### Перенос существующей установки SQLite в PostgreSQL
 
 ```bash
-x-ui migrate-db --dsn "postgres://xui:password@127.0.0.1:5432/xui?sslmode=disable"
-# затем задайте XUI_DB_TYPE и XUI_DB_DSN в /etc/default/x-ui и перезапустите:
-systemctl restart x-ui
+nh-v2ray-panel migrate-db --dsn "postgres://xui:password@127.0.0.1:5432/xui?sslmode=disable"
+# затем задайте XUI_DB_TYPE и XUI_DB_DSN в /etc/default/nh-v2ray-panel и перезапустите:
+systemctl restart nh-v2ray-panel
 ```
 
 Исходный файл SQLite остаётся нетронутым; удалите его вручную после проверки нового бэкенда.
@@ -127,7 +127,7 @@ docker run -d --cap-add=NET_ADMIN --cap-add=NET_RAW ... ghcr.io/navidhaghpanah/n
 | --- | --- | --- |
 | `XUI_DB_TYPE` | Бэкенд базы данных: `sqlite` или `postgres` | `sqlite` |
 | `XUI_DB_DSN` | Строка подключения PostgreSQL (когда `XUI_DB_TYPE=postgres`) | — |
-| `XUI_DB_FOLDER` | Каталог для файла базы данных SQLite | `/etc/x-ui` |
+| `XUI_DB_FOLDER` | Каталог для файла базы данных SQLite | `/etc/nh-v2ray-panel` |
 | `XUI_DB_MAX_OPEN_CONNS` | Максимум открытых соединений (пул PostgreSQL) | — |
 | `XUI_DB_MAX_IDLE_CONNS` | Максимум простаивающих соединений (пул PostgreSQL) | — |
 | `XUI_ENABLE_FAIL2BAN` | Включить применение лимитов IP на основе Fail2ban | `true` |

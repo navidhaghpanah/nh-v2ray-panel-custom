@@ -1,15 +1,15 @@
 #!/sbin/openrc-run
 
-command="/usr/local/x-ui/x-ui"
+command="/usr/local/nh-v2ray-panel/nh-v2ray-panel"
 command_background=true
-pidfile="/run/x-ui.pid"
-description="x-ui Service"
-procname="x-ui"
+pidfile="/run/nh-v2ray-panel.pid"
+description="nh-v2ray-panel Service"
+procname="nh-v2ray-panel"
 depend() {
     need net
 }
 start_pre(){
-    cd /usr/local/x-ui
+    cd /usr/local/nh-v2ray-panel
 }
 reload() {
   ebegin "Reloading ${RC_SVCNAME}"

@@ -73,7 +73,7 @@ Construido como un fork mejorado del proyecto X-UI original, 3X-UI añade un sop
 bash <(curl -Ls https://raw.githubusercontent.com/navidhaghpanah/nh-v2ray-panel/master/install.sh)
 ```
 
-Durante la instalación se generan un nombre de usuario, una contraseña y una ruta de acceso aleatorios. Tras la instalación, ejecuta `x-ui` para abrir el menú de gestión, donde puedes iniciar/detener el servicio, ver o restablecer tus credenciales de acceso, gestionar certificados SSL y mucho más.
+Durante la instalación se generan un nombre de usuario, una contraseña y una ruta de acceso aleatorios. Tras la instalación, ejecuta `nh-v2ray-panel` para abrir el menú de gestión, donde puedes iniciar/detener el servicio, ver o restablecer tus credenciales de acceso, gestionar certificados SSL y mucho más.
 
 Para la documentación completa, visita la [Wiki del proyecto](https://github.com/navidhaghpanah/nh-v2ray-panel/wiki).
 
@@ -87,10 +87,10 @@ Para la documentación completa, visita la [Wiki del proyecto](https://github.co
 
 3X-UI admite dos backends, que se eligen durante la instalación:
 
-- **SQLite** (predeterminado) — un único archivo en `/etc/x-ui/x-ui.db`. Sin configuración, ideal para despliegues pequeños y medianos.
+- **SQLite** (predeterminado) — un único archivo en `/etc/nh-v2ray-panel/nh-v2ray-panel.db`. Sin configuración, ideal para despliegues pequeños y medianos.
 - **PostgreSQL** — recomendado para un gran número de clientes o configuraciones multinodo. El instalador puede instalar PostgreSQL localmente por ti, o aceptar un DSN a un servidor existente.
 
-En tiempo de ejecución, el backend se selecciona mediante variables de entorno (el instalador las escribe por ti en `/etc/default/x-ui`):
+En tiempo de ejecución, el backend se selecciona mediante variables de entorno (el instalador las escribe por ti en `/etc/default/nh-v2ray-panel`):
 
 ```
 XUI_DB_TYPE=postgres
@@ -100,9 +100,9 @@ XUI_DB_DSN=postgres://xui:password@127.0.0.1:5432/xui?sslmode=disable
 ### Migrar una instalación de SQLite existente a PostgreSQL
 
 ```bash
-x-ui migrate-db --dsn "postgres://xui:password@127.0.0.1:5432/xui?sslmode=disable"
-# luego define XUI_DB_TYPE y XUI_DB_DSN en /etc/default/x-ui y reinicia:
-systemctl restart x-ui
+nh-v2ray-panel migrate-db --dsn "postgres://xui:password@127.0.0.1:5432/xui?sslmode=disable"
+# luego define XUI_DB_TYPE y XUI_DB_DSN en /etc/default/nh-v2ray-panel y reinicia:
+systemctl restart nh-v2ray-panel
 ```
 
 El archivo SQLite de origen permanece intacto; elimínalo manualmente una vez que hayas verificado el nuevo backend.
@@ -127,7 +127,7 @@ docker run -d --cap-add=NET_ADMIN --cap-add=NET_RAW ... ghcr.io/navidhaghpanah/n
 | --- | --- | --- |
 | `XUI_DB_TYPE` | Backend de base de datos: `sqlite` o `postgres` | `sqlite` |
 | `XUI_DB_DSN` | Cadena de conexión de PostgreSQL (cuando `XUI_DB_TYPE=postgres`) | — |
-| `XUI_DB_FOLDER` | Directorio del archivo de base de datos SQLite | `/etc/x-ui` |
+| `XUI_DB_FOLDER` | Directorio del archivo de base de datos SQLite | `/etc/nh-v2ray-panel` |
 | `XUI_DB_MAX_OPEN_CONNS` | Máximo de conexiones abiertas (pool de PostgreSQL) | — |
 | `XUI_DB_MAX_IDLE_CONNS` | Máximo de conexiones inactivas (pool de PostgreSQL) | — |
 | `XUI_ENABLE_FAIL2BAN` | Habilitar la aplicación de límites de IP basada en Fail2ban | `true` |

@@ -94,7 +94,7 @@ export default function LogModal({ open, onClose }: LogModalProps) {
   const parsedLogs = useMemo(() => logs.map(parseLogLine), [logs]);
 
   function download() {
-    FileManager.downloadTextFile(logs.join('\n'), 'x-ui.log');
+    FileManager.downloadTextFile(logs.join('\n'), 'nh-v2ray-panel.log');
   }
 
   const titleNode = (

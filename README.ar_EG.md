@@ -73,7 +73,7 @@
 bash <(curl -Ls https://raw.githubusercontent.com/navidhaghpanah/nh-v2ray-panel/master/install.sh)
 ```
 
-أثناء التثبيت، يتم إنشاء اسم مستخدم وكلمة مرور ومسار وصول عشوائية. بعد التثبيت، شغّل `x-ui` لفتح قائمة الإدارة، حيث يمكنك بدء/إيقاف الخدمة، وعرض أو إعادة تعيين بيانات تسجيل الدخول، وإدارة شهادات SSL، والمزيد.
+أثناء التثبيت، يتم إنشاء اسم مستخدم وكلمة مرور ومسار وصول عشوائية. بعد التثبيت، شغّل `nh-v2ray-panel` لفتح قائمة الإدارة، حيث يمكنك بدء/إيقاف الخدمة، وعرض أو إعادة تعيين بيانات تسجيل الدخول، وإدارة شهادات SSL، والمزيد.
 
 للحصول على الوثائق الكاملة، يرجى زيارة [ويكي المشروع](https://github.com/navidhaghpanah/nh-v2ray-panel/wiki).
 
@@ -87,10 +87,10 @@ bash <(curl -Ls https://raw.githubusercontent.com/navidhaghpanah/nh-v2ray-panel/
 
 يدعم 3X-UI خلفيتين (backends) يتم اختيارهما أثناء التثبيت:
 
-- **SQLite** (افتراضي) — ملف واحد في `/etc/x-ui/x-ui.db`. بدون إعداد، مثالي لعمليات النشر الصغيرة والمتوسطة.
+- **SQLite** (افتراضي) — ملف واحد في `/etc/nh-v2ray-panel/nh-v2ray-panel.db`. بدون إعداد، مثالي لعمليات النشر الصغيرة والمتوسطة.
 - **PostgreSQL** — موصى به لأعداد العملاء الكبيرة أو الإعدادات متعددة العقد. يمكن للمثبِّت تثبيت PostgreSQL محليًا لك، أو قبول DSN لخادم موجود.
 
-في وقت التشغيل، يتم اختيار الخلفية عبر متغيرات البيئة (يكتبها المثبِّت لك في `/etc/default/x-ui`):
+في وقت التشغيل، يتم اختيار الخلفية عبر متغيرات البيئة (يكتبها المثبِّت لك في `/etc/default/nh-v2ray-panel`):
 
 ```
 XUI_DB_TYPE=postgres
@@ -100,9 +100,9 @@ XUI_DB_DSN=postgres://xui:password@127.0.0.1:5432/xui?sslmode=disable
 ### ترحيل تثبيت SQLite موجود إلى PostgreSQL
 
 ```bash
-x-ui migrate-db --dsn "postgres://xui:password@127.0.0.1:5432/xui?sslmode=disable"
-# ثم عيّن XUI_DB_TYPE و XUI_DB_DSN في /etc/default/x-ui وأعد التشغيل:
-systemctl restart x-ui
+nh-v2ray-panel migrate-db --dsn "postgres://xui:password@127.0.0.1:5432/xui?sslmode=disable"
+# ثم عيّن XUI_DB_TYPE و XUI_DB_DSN في /etc/default/nh-v2ray-panel وأعد التشغيل:
+systemctl restart nh-v2ray-panel
 ```
 
 يبقى ملف SQLite الأصلي دون تغيير؛ احذفه يدويًا بعد التحقق من الخلفية الجديدة.
@@ -127,7 +127,7 @@ docker run -d --cap-add=NET_ADMIN --cap-add=NET_RAW ... ghcr.io/navidhaghpanah/n
 | --- | --- | --- |
 | `XUI_DB_TYPE` | خلفية قاعدة البيانات: `sqlite` أو `postgres` | `sqlite` |
 | `XUI_DB_DSN` | سلسلة اتصال PostgreSQL (عندما `XUI_DB_TYPE=postgres`) | — |
-| `XUI_DB_FOLDER` | مجلد ملف قاعدة بيانات SQLite | `/etc/x-ui` |
+| `XUI_DB_FOLDER` | مجلد ملف قاعدة بيانات SQLite | `/etc/nh-v2ray-panel` |
 | `XUI_DB_MAX_OPEN_CONNS` | الحد الأقصى للاتصالات المفتوحة (تجمّع PostgreSQL) | — |
 | `XUI_DB_MAX_IDLE_CONNS` | الحد الأقصى للاتصالات الخاملة (تجمّع PostgreSQL) | — |
 | `XUI_ENABLE_FAIL2BAN` | تفعيل فرض حدود IP المعتمد على Fail2ban | `true` |

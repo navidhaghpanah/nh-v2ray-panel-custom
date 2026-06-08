@@ -27,7 +27,7 @@ COPY --from=frontend /src/web/dist ./web/dist
 
 ENV CGO_ENABLED=1
 ENV CGO_CFLAGS="-D_LARGEFILE64_SOURCE"
-RUN go build -ldflags "-w -s" -o build/x-ui main.go
+RUN go build -ldflags "-w -s" -o build/nh-v2ray-panel main.go
 RUN ./DockerInit.sh "$TARGETARCH"
 
 # ========================================================
@@ -47,7 +47,7 @@ RUN apk add --no-cache --update \
 
 COPY --from=builder /app/build/ /app/
 COPY --from=builder /app/DockerEntrypoint.sh /app/
-COPY --from=builder /app/x-ui.sh /usr/bin/x-ui
+COPY --from=builder /app/nh-v2ray-panel.sh /usr/bin/nh-v2ray-panel
 COPY --from=builder /app/web/translation /app/web/translation
 
 
@@ -60,8 +60,8 @@ RUN rm -f /etc/fail2ban/jail.d/alpine-ssh.conf \
 
 RUN chmod +x \
   /app/DockerEntrypoint.sh \
-  /app/x-ui \
-  /usr/bin/x-ui
+  /app/nh-v2ray-panel \
+  /usr/bin/nh-v2ray-panel
 
 ENV XUI_IN_DOCKER="true"
 ENV XUI_MAIN_FOLDER="/app"
@@ -69,6 +69,6 @@ ENV XUI_ENABLE_FAIL2BAN="true"
 ENV XUI_DB_TYPE=""
 ENV XUI_DB_DSN=""
 EXPOSE 2053
-VOLUME [ "/etc/x-ui" ]
-CMD [ "./x-ui" ]
+VOLUME [ "/etc/nh-v2ray-panel" ]
+CMD [ "./nh-v2ray-panel" ]
 ENTRYPOINT [ "/app/DockerEntrypoint.sh" ]

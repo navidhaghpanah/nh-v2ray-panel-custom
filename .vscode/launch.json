@@ -1,0 +1,38 @@
+{
+  "$schema": "vscode://schemas/launch",
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run nh-v2ray-panel (Debug)",
+      "type": "go",
+      "request": "launch",
+      "mode": "auto",
+      "program": "${workspaceFolder}",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "XUI_DEBUG": "true",
+        "XUI_DB_FOLDER": "nh-v2ray-panel",
+        "XUI_LOG_FOLDER": "nh-v2ray-panel",
+        "XUI_BIN_FOLDER": "nh-v2ray-panel"
+      },
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Run nh-v2ray-panel (Postgres)",
+      "type": "go",
+      "request": "launch",
+      "mode": "auto",
+      "program": "${workspaceFolder}",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "XUI_DEBUG": "true",
+        "XUI_LOG_FOLDER": "nh-v2ray-panel",
+        "XUI_BIN_FOLDER": "nh-v2ray-panel",
+        "XUI_DB_TYPE": "postgres",
+        "XUI_DB_DSN": "postgres://xui:xuipass@127.0.0.1:5432/xui?sslmode=disable",
+        "PATH": "C:\\Program Files\\PostgreSQL\\18\\bin;${env:PATH}"
+      },
+      "console": "integratedTerminal"
+    },
+  ]
+}

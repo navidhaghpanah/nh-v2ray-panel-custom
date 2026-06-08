@@ -73,7 +73,7 @@ Built as an enhanced fork of the original X-UI project, 3X-UI adds broader proto
 bash <(curl -Ls https://raw.githubusercontent.com/navidhaghpanah/nh-v2ray-panel/master/install.sh)
 ```
 
-During installation a random username, password, and access path are generated. After installation, run `x-ui` to open the management menu, where you can start/stop the service, view or reset your login credentials, manage SSL certificates, and more.
+During installation a random username, password, and access path are generated. After installation, run `nh-v2ray-panel` to open the management menu, where you can start/stop the service, view or reset your login credentials, manage SSL certificates, and more.
 
 For full documentation, please visit the [project Wiki](https://github.com/navidhaghpanah/nh-v2ray-panel/wiki).
 
@@ -87,10 +87,10 @@ For full documentation, please visit the [project Wiki](https://github.com/navid
 
 3X-UI supports two backends, chosen during the install:
 
-- **SQLite** (default) — a single file at `/etc/x-ui/x-ui.db`. Zero setup, ideal for small and medium deployments.
+- **SQLite** (default) — a single file at `/etc/nh-v2ray-panel/nh-v2ray-panel.db`. Zero setup, ideal for small and medium deployments.
 - **PostgreSQL** — recommended for high client counts or multi-node setups. The installer can install PostgreSQL locally for you, or accept a DSN to an existing server.
 
-At runtime the backend is selected via environment variables (the installer writes these to `/etc/default/x-ui` for you):
+At runtime the backend is selected via environment variables (the installer writes these to `/etc/default/nh-v2ray-panel` for you):
 
 ```
 XUI_DB_TYPE=postgres
@@ -100,9 +100,9 @@ XUI_DB_DSN=postgres://xui:password@127.0.0.1:5432/xui?sslmode=disable
 ### Migrating an existing SQLite install to PostgreSQL
 
 ```bash
-x-ui migrate-db --dsn "postgres://xui:password@127.0.0.1:5432/xui?sslmode=disable"
-# then set XUI_DB_TYPE and XUI_DB_DSN in /etc/default/x-ui and restart:
-systemctl restart x-ui
+nh-v2ray-panel migrate-db --dsn "postgres://xui:password@127.0.0.1:5432/xui?sslmode=disable"
+# then set XUI_DB_TYPE and XUI_DB_DSN in /etc/default/nh-v2ray-panel and restart:
+systemctl restart nh-v2ray-panel
 ```
 
 The source SQLite file is left untouched; remove it manually once you have verified the new backend.
@@ -127,7 +127,7 @@ docker run -d --cap-add=NET_ADMIN --cap-add=NET_RAW ... ghcr.io/navidhaghpanah/n
 | --- | --- | --- |
 | `XUI_DB_TYPE` | Database backend: `sqlite` or `postgres` | `sqlite` |
 | `XUI_DB_DSN` | PostgreSQL connection string (when `XUI_DB_TYPE=postgres`) | — |
-| `XUI_DB_FOLDER` | Directory for the SQLite database file | `/etc/x-ui` |
+| `XUI_DB_FOLDER` | Directory for the SQLite database file | `/etc/nh-v2ray-panel` |
 | `XUI_DB_MAX_OPEN_CONNS` | Maximum open connections (PostgreSQL pool) | — |
 | `XUI_DB_MAX_IDLE_CONNS` | Maximum idle connections (PostgreSQL pool) | — |
 | `XUI_ENABLE_FAIL2BAN` | Enable Fail2ban-based IP-limit enforcement | `true` |

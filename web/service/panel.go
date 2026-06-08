@@ -91,7 +91,7 @@ func (s *PanelService) StartUpdate() error {
 	updateScript := fmt.Sprintf("set -e; trap 'rm -f %s' EXIT; %s %s", shellQuote(scriptPath), shellQuote(bash), shellQuote(scriptPath))
 
 	if systemdRun, err := exec.LookPath("systemd-run"); err == nil {
-		unitName := fmt.Sprintf("x-ui-web-update-%d", time.Now().Unix())
+		unitName := fmt.Sprintf("nh-v2ray-panel-web-update-%d", time.Now().Unix())
 		cmd := exec.Command(systemdRun,
 			"--unit", unitName,
 			"--setenv", "XUI_MAIN_FOLDER="+mainFolder,
@@ -197,7 +197,7 @@ func resolveUpdateFolders() (string, string) {
 		}
 	}
 	if mainFolder == "" {
-		mainFolder = "/usr/local/x-ui"
+		mainFolder = "/usr/local/nh-v2ray-panel"
 	}
 
 	serviceFolder := os.Getenv("XUI_SERVICE")

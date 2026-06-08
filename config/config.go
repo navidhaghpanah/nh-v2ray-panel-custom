@@ -97,7 +97,7 @@ func GetDBFolderPath() string {
 	if runtime.GOOS == "windows" {
 		return getBaseDir()
 	}
-	return "/etc/x-ui"
+	return "/etc/nh-v2ray-panel"
 }
 
 // GetDBPath returns the full path to the database file.
@@ -128,9 +128,9 @@ func GetEnvFilePaths() []string {
 		return nil
 	}
 	return []string{
-		"/etc/default/x-ui",
-		"/etc/conf.d/x-ui",
-		"/etc/sysconfig/x-ui",
+		"/etc/default/nh-v2ray-panel",
+		"/etc/conf.d/nh-v2ray-panel",
+		"/etc/sysconfig/nh-v2ray-panel",
 	}
 }
 
@@ -143,7 +143,7 @@ func GetLogFolder() string {
 	if runtime.GOOS == "windows" {
 		return filepath.Join(".", "log")
 	}
-	return "/var/log/x-ui"
+	return "/var/log/nh-v2ray-panel"
 }
 
 func copyFile(src, dst string) error {
@@ -174,7 +174,7 @@ func init() {
 	if os.Getenv("XUI_DB_FOLDER") != "" {
 		return
 	}
-	oldDBFolder := "/etc/x-ui"
+	oldDBFolder := "/etc/nh-v2ray-panel"
 	oldDBPath := fmt.Sprintf("%s/%s.db", oldDBFolder, GetName())
 	newDBFolder := GetDBFolderPath()
 	newDBPath := fmt.Sprintf("%s/%s.db", newDBFolder, GetName())

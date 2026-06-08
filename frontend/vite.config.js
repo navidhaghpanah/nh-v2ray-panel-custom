@@ -13,13 +13,13 @@ function resolveDBPath() {
     const abs = path.isAbsolute(envFolder)
       ? envFolder
       : path.resolve(__dirname, '..', envFolder);
-    return path.join(abs, 'x-ui.db');
+    return path.join(abs, 'nh-v2ray-panel.db');
   }
-  const repoSubDB = path.resolve(__dirname, '..', 'x-ui', 'x-ui.db');
+  const repoSubDB = path.resolve(__dirname, '..', 'nh-v2ray-panel', 'nh-v2ray-panel.db');
   if (fs.existsSync(repoSubDB)) return repoSubDB;
-  const repoDB = path.resolve(__dirname, '..', 'x-ui.db');
+  const repoDB = path.resolve(__dirname, '..', 'nh-v2ray-panel.db');
   if (fs.existsSync(repoDB)) return repoDB;
-  return '/etc/x-ui/x-ui.db';
+  return '/etc/nh-v2ray-panel/nh-v2ray-panel.db';
 }
 
 const PANEL_API_PREFIXES = ['panel/api/', 'panel/csrf-token'];

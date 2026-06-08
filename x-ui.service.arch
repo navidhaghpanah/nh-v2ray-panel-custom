@@ -1,14 +1,14 @@
 [Unit]
-Description=x-ui Service
+Description=nh-v2ray-panel Service
 After=network.target
 Wants=network.target
 
 [Service]
-EnvironmentFile=-/etc/conf.d/x-ui
+EnvironmentFile=-/etc/conf.d/nh-v2ray-panel
 Environment="XRAY_VMESS_AEAD_FORCED=false"
 Type=simple
-WorkingDirectory=/usr/local/x-ui/
-ExecStart=/usr/local/x-ui/x-ui
+WorkingDirectory=/usr/local/nh-v2ray-panel/
+ExecStart=/usr/local/nh-v2ray-panel/nh-v2ray-panel
 ExecReload=kill -USR1 $MAINPID
 Restart=on-failure
 RestartSec=5s

@@ -13,7 +13,7 @@ services:
       - NET_ADMIN
       - NET_RAW
     volumes:
-      - $PWD/db/:/etc/x-ui/
+      - $PWD/db/:/etc/nh-v2ray-panel/
       - $PWD/cert/:/root/cert/
     environment:
       XRAY_VMESS_AEAD_FORCED: "false"

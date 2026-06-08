@@ -2,7 +2,7 @@
 
 # Start fail2ban with the 3x-ipl jail
 if [ "$XUI_ENABLE_FAIL2BAN" = "true" ]; then
-    LOG_FOLDER="${XUI_LOG_FOLDER:-/var/log/x-ui}"
+    LOG_FOLDER="${XUI_LOG_FOLDER:-/var/log/nh-v2ray-panel}"
     mkdir -p "$LOG_FOLDER"
     touch "$LOG_FOLDER/3xipl.log" "$LOG_FOLDER/3xipl-banned.log"
 
@@ -33,7 +33,7 @@ EOF
     # added later without regenerating these files.
     SSH_PORTS=$(grep -oE '^[[:space:]]*Port[[:space:]]+[0-9]+' /etc/ssh/sshd_config 2>/dev/null | grep -oE '[0-9]+' | paste -sd, -)
     [ -z "$SSH_PORTS" ] && SSH_PORTS="22"
-    PANEL_PORT=$(/app/x-ui setting -show true 2>/dev/null | grep -Eo 'port: .+' | awk '{print $2}')
+    PANEL_PORT=$(/app/nh-v2ray-panel setting -show true 2>/dev/null | grep -Eo 'port: .+' | awk '{print $2}')
     EXEMPT_PORTS="$SSH_PORTS"
     [ -n "$PANEL_PORT" ] && EXEMPT_PORTS="$EXEMPT_PORTS,$PANEL_PORT"
 
@@ -68,5 +68,5 @@ EOF
     fail2ban-client -x start
 fi
 
-# Run x-ui
-exec /app/x-ui
+# Run nh-v2ray-panel
+exec /app/nh-v2ray-panel

@@ -3561,9 +3561,9 @@ func (t *Tgbot) sendBackup(chatId int64) {
 	// Send database backup (SQLite file, or a pg_dump archive on PostgreSQL)
 	dbData, err := t.serverService.GetDb()
 	if err == nil {
-		dbFilename := "x-ui.db"
+		dbFilename := "nh-v2ray-panel.db"
 		if database.IsPostgres() {
-			dbFilename = "x-ui.dump"
+			dbFilename = "nh-v2ray-panel.dump"
 		}
 		ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
 		document := tu.Document(
