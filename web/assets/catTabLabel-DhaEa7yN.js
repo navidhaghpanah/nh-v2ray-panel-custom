@@ -1,0 +1,2 @@
+import{X as e}from"./vendor-antd-B5qK9eN5.js";import{t}from"./vendor-react-By8HlURe.js";var n=t();function r(t,r,i){return i?(0,n.jsx)(e,{title:r,children:t}):(0,n.jsxs)(`span`,{style:{display:`inline-flex`,alignItems:`center`,gap:8},children:[t,(0,n.jsx)(`span`,{children:r})]})}export{r as t};
+//# sourceMappingURL=catTabLabel-DhaEa7yN.js.map

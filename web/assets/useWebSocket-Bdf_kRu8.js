@@ -1,0 +1,2 @@
+import{r as e}from"./rolldown-runtime-QTnfLwEv.js";import{vi as t}from"./vendor-CGS5SRPY.js";import{i as n}from"./index-DvTbZLLG.js";var r=e(t(),1),i=null;function a(){return i||(i=new n(typeof window<`u`&&window.X_UI_BASE_PATH||``),i)}function o(e){(0,r.useEffect)(()=>{let t=a(),n=Object.entries(e);for(let[e,r]of n)t.on(e,r);return t.connect(),()=>{for(let[e,r]of n)t.off(e,r)}},[])}export{o as t};
+//# sourceMappingURL=useWebSocket-Bdf_kRu8.js.map
